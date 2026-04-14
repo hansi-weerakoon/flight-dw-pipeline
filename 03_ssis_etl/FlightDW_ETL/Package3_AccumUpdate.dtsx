@@ -1,0 +1,1467 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/26/2026 1:31:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-T0115FB7"
+  DTS:CreatorName="LAPTOP-T0115FB7\ASUS"
+  DTS:DTSID="{E903BB68-794D-43F8-A9E8-865EEC6CA0D6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{CC593F1C-BD40-4350-8FE3-EBB4CE69EB3A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C30BC58C-EE43-4C1C-83BE-661922746987}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ASUS\SQLData\SLIIT Data Warehouse Solution Tutorial\Flight_DW_Project\SourceFiles\accum_completion.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="operation_id"
+              DTS:DTSID="{11A2A41B-ABCE-478D-8ADB-97E3A4B251D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="accm_txn_complete_time"
+              DTS:DTSID="{0E561414-3D13-4C23-A088-1B5F16426A6E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BB0DFC46-2151-434C-8A7C-96F62EB27E52}"
+      DTS:ObjectName="LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-T0115FB7\MSSQLSERVER2;User ID=sa;Initial Catalog=FlightDW;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{BB0DFC46-2151-434C-8A7C-96F62EB27E52}LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2lE7bNXGFkCaOH07cjEVXgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADTPkMnQ1mYJypQkoyRugNrDu0iTSCWyt6JZdElFlVqAwAAAAAOgAAAAAIAACAAAADKE6JqaJtabdp5J1EVhA+1A7BRggZimWb1yqZ9k1UIZBAAAAAKl2Cfhj+GQXrm+IPUKjVSQAAAADFJqq+qbOY3qsPWZj3fl2esbugv7ulxilL+GN36AMP9bzweYbfR72GrXK1E2fXpOMUOCDdbfYOG2ttdzSm6Oc4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5EFE406E-4576-4384-976D-564AF18E518D}"
+      DTS:ObjectName="LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-T0115FB7\MSSQLSERVER2;User ID=sa;Initial Catalog=FlightDW_Staging;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{5EFE406E-4576-4384-976D-564AF18E518D}LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2lE7bNXGFkCaOH07cjEVXgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADdiP+QIZd1WwHhPIqPeorCzYVkrGv2xx7gVZ8PahgfbwAAAAAOgAAAAAIAACAAAADIqRKDsKviuFQq083M42Ydtn3CmIj72HoCj3mCLYFmxxAAAACwgLxcyr6bGQdouicc1R1PQAAAAFinDinLlv8zrX9LyA4oYhKofkt83gcnQuLK09Ib19GyZHo7AXbUQAAX+dwdt1toeM58I198kNzaO44QieU2WzQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_AccumCompletion_Update"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7E0E79B6-B77E-4ABC-A2DD-7C8D446535A4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_AccumCompletion_Update"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Cmd_Update_FactCompletion"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE FlightDW.dbo.Fact_FlightOperation
+
+SET    accm_txn_complete_time = ?
+
+WHERE  operation_id = ?
+
+AND    accm_txn_complete_time IS NULL;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input].Columns[accm_txn_complete_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="accm_txn_complete_time"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[accm_txn_complete_time]" />
+                    <inputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input].Columns[operation_id]"
+                      cachedDataType="i4"
+                      cachedName="operation_id"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[operation_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derive_ErrorReason"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output].Columns[error_reason]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output].Columns[error_reason]"
+                      name="error_reason"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,200,1252)"operation_id not found in Fact_FlightOperation"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,200,1252)"operation_id not found in Fact_FlightOperation"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output].Columns[created_at]"
+                      name="created_at"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dest_stg_AccumErrors"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_AccumErrors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].Columns[operation_id]"
+                      cachedDataType="i4"
+                      cachedName="operation_id"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[operation_id]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[operation_id]" />
+                    <inputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].Columns[accm_txn_complete_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="accm_txn_complete_time"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[accm_txn_complete_time]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[accm_txn_complete_time]" />
+                    <inputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].Columns[error_reason]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="error_reason"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[error_reason]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output].Columns[error_reason]" />
+                    <inputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].Columns[created_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created_at"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[captured_at]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output].Columns[created_at]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[operation_id]"
+                      dataType="i4"
+                      name="operation_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      name="accm_txn_complete_time" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[error_reason]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="error_reason" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input].ExternalColumns[captured_at]"
+                      dataType="dbTimeStamp"
+                      name="captured_at" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lkp_Fact_FlightOperation"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT operation_id, operation_key
+
+FROM FlightDW.dbo.Fact_FlightOperation;</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT operation_id, operation_key
+
+FROM FlightDW.dbo.Fact_FlightOperation;) [refTable]
+where [refTable].[operation_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="operation_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="operation_key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[operation_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Inputs[Lookup Input].Columns[operation_id]"
+                      cachedDataType="i4"
+                      cachedName="operation_id"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[operation_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">operation_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Match Output].Columns[operation_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Match Output].Columns[operation_key]"
+                      name="operation_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">operation_key</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Src_stg_AccumCompletion"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT operation_id, accm_txn_complete_time
+
+FROM FlightDW_Staging.dbo.stg_AccumCompletion;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[operation_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].ExternalColumns[operation_id]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[operation_id]"
+                      name="operation_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].ExternalColumns[accm_txn_complete_time]"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].Columns[accm_txn_complete_time]"
+                      name="accm_txn_complete_time"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].ExternalColumns[operation_id]"
+                      dataType="i4"
+                      name="operation_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output].ExternalColumns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      name="accm_txn_complete_time" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[operation_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[operation_id]"
+                      name="operation_id" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[accm_txn_complete_time]"
+                      name="accm_txn_complete_time" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_AccumCompletion_Update.Paths[Derived Column Output]"
+              endId="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_AccumCompletion_Update.Paths[Lookup Match Output]"
+              endId="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_AccumCompletion_Update.Paths[Lookup No Match Output]"
+              endId="Package\DFT_AccumCompletion_Update\Derive_ErrorReason.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT_AccumCompletion_Update.Paths[OLE DB Source Output]"
+              endId="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_AccumCompletion"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F23B8BDE-53A2-446B-949A-F94BB2ADDA1F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Load_AccumCompletion"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dest_stg_AccumCompletion"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_AccumCompletion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-T0115FB7\MSSQLSERVER2.FlightDW_Staging.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input].Columns[operation_id]"
+                      cachedDataType="i4"
+                      cachedName="operation_id"
+                      externalMetadataColumnId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input].ExternalColumns[operation_id]"
+                      lineageId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].Columns[operation_id]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input].Columns[accm_txn_complete_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="accm_txn_complete_time"
+                      externalMetadataColumnId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input].ExternalColumns[accm_txn_complete_time]"
+                      lineageId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].Columns[accm_txn_complete_time]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input].ExternalColumns[operation_id]"
+                      dataType="i4"
+                      name="operation_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input].ExternalColumns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      name="accm_txn_complete_time" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Src_AccumCompletion_CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].Columns[operation_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].ExternalColumns[operation_id]"
+                      lineageId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].Columns[operation_id]"
+                      name="operation_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].Columns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].ExternalColumns[accm_txn_complete_time]"
+                      lineageId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].Columns[accm_txn_complete_time]"
+                      name="accm_txn_complete_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].ExternalColumns[operation_id]"
+                      dataType="i4"
+                      name="operation_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output].ExternalColumns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      name="accm_txn_complete_time" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_AccumCompletion.Paths[Flat File Source Output]"
+              endId="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Compute_ProcessTimeHours"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1C3C5932-0F78-4EA1-B717-677A5548286B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Compute_ProcessTimeHours"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BB0DFC46-2151-434C-8A7C-96F62EB27E52}"
+          SQLTask:SqlStatementSource="EXEC dbo.usp_UpdateTxnProcessHours;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Truncate_AccumStaging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A594900E-77F9-4112-BCBB-03C0EA8940DB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Truncate_AccumStaging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5EFE406E-4576-4384-976D-564AF18E518D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.stg_AccumCompletion;&#xA;&#xA;TRUNCATE TABLE dbo.stg_AccumErrors;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Validate_AccumStaging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8514307D-0E35-419F-A539-5C643AE05859}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Validate_AccumStaging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5EFE406E-4576-4384-976D-564AF18E518D}"
+          SQLTask:SqlStatementSource="DECLARE @staged   INT = (SELECT COUNT(*) FROM FlightDW_Staging.dbo.stg_AccumCompletion);&#xA;DECLARE @distinct INT = (SELECT COUNT(DISTINCT operation_id) FROM   FlightDW_Staging.dbo.stg_AccumCompletion);&#xA;&#xA;PRINT 'Rows staged:              ' + CAST(@staged   AS VARCHAR);&#xA;PRINT 'Distinct operation_ids:   ' + CAST(@distinct AS VARCHAR);&#xA;PRINT 'Duplicate operation_ids:  ' + CAST(@staged - @distinct AS VARCHAR);&#xA;&#xA;-- If duplicates exist, keep only the latest completion time per operation_id&#xA;-- (a flight can only complete once — take the most recent if file has dups)&#xA;IF @staged &gt; @distinct&#xA;BEGIN&#xA;    PRINT 'Deduplicating — keeping latest completion time per operation_id...';&#xA;    WITH ranked AS (&#xA;        SELECT *,&#xA;               ROW_NUMBER() OVER (&#xA;                   PARTITION BY operation_id&#xA;                   ORDER BY accm_txn_complete_time DESC&#xA;               ) AS rn&#xA;        FROM FlightDW_Staging.dbo.stg_AccumCompletion&#xA;    )&#xA;    DELETE FROM FlightDW_Staging.dbo.stg_AccumCompletion&#xA;    WHERE  operation_id IN (&#xA;        SELECT operation_id FROM ranked WHERE rn &gt; 1&#xA;    );&#xA;    PRINT 'Deduplication complete.';&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1D781EA5-C572-4364-A600-0152A8C7DEF2}"
+      DTS:From="Package\SQL_Truncate_AccumStaging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_Load_AccumCompletion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C87E00FD-1F0B-4940-9E85-0DBB456EB1E6}"
+      DTS:From="Package\DFT_Load_AccumCompletion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL_Validate_AccumStaging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F0519B30-E557-45C8-860F-C7727D9262BA}"
+      DTS:From="Package\SQL_Validate_AccumStaging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DFT_AccumCompletion_Update" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{F331BA41-8544-4AF5-89E4-2749797131D4}"
+      DTS:From="Package\DFT_AccumCompletion_Update"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\SQL_Compute_ProcessTimeHours" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\SQL_Truncate_AccumStaging"
+          TopLeft="164.999990984798,19.0666665340795" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\DFT_Load_AccumCompletion"
+          TopLeft="167.499990848204,92.7333326884773" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="275.449990916501,60.6666665340795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0666661543979"
+              Start="0,0"
+              End="0,24.5666661543979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5666661543979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\SQL_Validate_AccumStaging"
+          TopLeft="167.499990848204,168.999998824795" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="275.699990848204,134.333332688477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.6666661363178"
+              Start="0,0"
+              End="0,27.1666661363178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1666661363178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\DFT_AccumCompletion_Update"
+          TopLeft="164.166657696996,246.999998282393" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="276.6333242726,210.599998824795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3999994575976"
+              Start="0,0"
+              End="0,28.8999994575976">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8999994575976" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\SQL_Compute_ProcessTimeHours"
+          TopLeft="156.666658106778,324.133331079351" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="277.816657901887,288.599998282393">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.5333327969577"
+              Start="0,0"
+              End="0,28.0333327969577">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0333327969577" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Load_AccumCompletion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\DFT_Load_AccumCompletion\Src_AccumCompletion_CSV"
+          TopLeft="148.333325228758,18.1999998734395" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion"
+          TopLeft="152.499991667768,110.933332561917" />
+        <EdgeLayout
+          Id="Package\DFT_Load_AccumCompletion.Paths[Flat File Source Output]"
+          TopLeft="255.616658448263,59.7999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.1333326884773"
+              Start="0,0"
+              End="0,43.6333326884773">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.6333326884773" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_AccumCompletion\Dest_stg_AccumCompletion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_AccumCompletion_Update">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion"
+          TopLeft="111.99999833107,23.9999996423721" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation"
+          TopLeft="117.999998241663,118.999998226762" />
+        <EdgeLayout
+          Id="Package\DFT_AccumCompletion_Update.Paths[OLE DB Source Output]"
+          TopLeft="215.599998286366,65.5999996423721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.3999985843898"
+              Start="0,0"
+              End="0,45.8999985843898">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8999985843898" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\DFT_AccumCompletion_Update\Derive_ErrorReason"
+          TopLeft="385.999994248152,119.999998211861" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors"
+          TopLeft="634.999990537763,118.999998226762" />
+        <EdgeLayout
+          Id="Package\DFT_AccumCompletion_Update.Paths[Derived Column Output]"
+          TopLeft="559.599994248152,140.299998219311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.3999962896108,0"
+              Start="0,0"
+              End="67.8999962896108,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.8999962896108,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\DFT_AccumCompletion_Update\Cmd_Update_FactCompletion"
+          TopLeft="108.999998375773,205.999996930361" />
+        <EdgeLayout
+          Id="Package\DFT_AccumCompletion_Update.Paths[Lookup Match Output]"
+          TopLeft="217.699998308718,160.599998226762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.3999987035987"
+              Start="0,0"
+              End="0,37.8999987035987">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.8999987035987" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.1453118517994,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_AccumCompletion_Update.Paths[Lookup No Match Output]"
+          TopLeft="316.399998241663,140.299998219311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.5999960064889,0"
+              Start="0,0"
+              End="62.0999960064889,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.0999960064889,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.7563887155056,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_AccumCompletion_Update\Src_stg_AccumCompletion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_AccumCompletion_Update\Lkp_Fact_FlightOperation">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_AccumCompletion_Update\Dest_stg_AccumErrors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
