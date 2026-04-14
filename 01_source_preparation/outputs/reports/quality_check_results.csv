@@ -1,0 +1,9 @@
+check,count,severity
+Cancelled flights with non-null dep_time,3656,HIGH
+Operated flights missing dep_time,0,OK
+Cancelled flights with non-zero delay components,0,LOW
+dep_delay ↔ arr_delay Pearson correlation,0.9707,OK
+Cancelled flights with actual_elapsed_time,0,OK
+Earliest fl_date,2024-01-01 00:00:00,INFO
+Latest fl_date,2024-12-31 00:00:00,INFO
+Months covered,12,INFO
