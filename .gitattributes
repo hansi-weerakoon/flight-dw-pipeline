@@ -1,1 +1,2 @@
 01_source_preparation/outputs/flight_operations.csv filter=lfs diff=lfs merge=lfs -text
+*.pbix filter=lfs diff=lfs merge=lfs -text
